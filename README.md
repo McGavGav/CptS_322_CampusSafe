@@ -2,4 +2,4 @@
 CptS 322 project for spring 2025
 
 Members:
-Gavin Burchett
+Gavin Burchett, julian hutchins
