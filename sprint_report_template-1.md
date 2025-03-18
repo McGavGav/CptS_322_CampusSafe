@@ -36,7 +36,7 @@ Please review the following code files, which were actively developed during thi
  * [report.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/gilad/report.py)
  * [safety_resources.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/julian/safety_resources.py)
  * [andreas_branch_with_Django_and_Emergency_Button](https://github.com/McGavGav/CptS_322_CampusSafe/tree/andrea)
- * [marissa](link)
+ * [ReportHistory.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/Marissa/ReportHistory.py)
  
 ## Retrospective Summary
 Here's what went well:
