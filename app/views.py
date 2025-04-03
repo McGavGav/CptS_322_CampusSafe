@@ -13,7 +13,7 @@ def showButton(request):
     return render(request, 'alertButton.html', { 'name': ''})
 
 def home(request):
-    return render(request, 'home.html', {'alert_button_url': '/alert/'})
+    return render(request, 'home.html', {'alert_button_url': '/app/alert/'})
 
 @csrf_exempt 
 #received locations
