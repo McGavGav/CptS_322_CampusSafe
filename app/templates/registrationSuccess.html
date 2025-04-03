@@ -2,9 +2,15 @@
 <html>
 <head>
     <title>Registration Success</title>
+    <script>
+        // Redirect to the home page after 3 seconds
+        setTimeout(function() {
+            window.location.href = "{% url 'home' %}";
+        }, 3000);
+    </script>
 </head>
 <body>
     <h1>Registration Successful!</h1>
-    <p>Your user has been registered successfully.</p>
+    <p>Your user has been registered successfully. You will be redirected to the home page shortly.</p>
 </body>
 </html>

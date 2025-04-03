@@ -8,6 +8,7 @@ urlpatterns = [
     path('alertsend/', views.locRec),
     path('alert/', views.showButton),
     path('registerUser/', register_user, name='register_user'),
-    path('registration_success/', TemplateView.as_view(template_name="registration_success.html"), name='registration_success'),
+    path('registration_success/', views.registration_success, name='registration_success'),
+    path('login/', views.login_user, name='login_user'),
     path('', views.home, name='home'),
 ]
