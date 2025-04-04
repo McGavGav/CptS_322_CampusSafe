@@ -1,6 +1,4 @@
-<!--
-<<h1>Campus Safe {{name}}</h1> 
--->
+{% extends 'base.html' %}
 {% csrf_token %}
 
 <!DOCTYPE html>
@@ -9,7 +7,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Button Alert</title>
+        {% block title %}Emergency Alert{% endblock %}
+        {% block content %}
+        <h2>Emergency Button</h2>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load static %}
@@ -17,11 +17,16 @@
     </head>
     <body>
         <div class = "container">
-
             <button class = "button" onclick= "sendAlert()">Alert</button>
-
+        </div>
+        </div id="status" style="text-align: center; margin-top: 20px;"></div>
+            
+        <div>
+            <button onclick="cancelEmergency()">Cancel Emergency</button>
         </div>
         <script src = "{% static 'assets/js/script.js' %}"> </script>
+        {% endblock %}
     </body>
 </html>
+
 

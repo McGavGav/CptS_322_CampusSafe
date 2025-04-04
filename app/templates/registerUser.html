@@ -1,9 +1,11 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Register or Login</title>
 </head>
 <body>
+    {% block content %}
     <h1>Register User</h1>
     <form method="post">
         {% csrf_token %}
@@ -31,5 +33,6 @@
         <br>
         <button type="submit">Login</button>
     </form>
+    {% endblock %}
 </body>
 </html>
