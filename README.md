@@ -5,3 +5,5 @@ Members:
 Gavin Burchett, julian hutchins, Andrea Luquin, Marissa Cho, Gilad Heitner
 
 Find current work in alternate branches.
+
+to install resources for this template, use command:  pip3 install -r requirements.txt
