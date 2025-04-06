@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Safe</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'crimoapp/style.css' %}">
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
     <style>
@@ -124,9 +124,12 @@
             <h1>Welcome to Campus Safe!</h1>
             <p> reporting incidents, accessing safety resources, </p>
             <p> and connecting with emergency services.</p>
+            <div class = "alert_button_container">
+                <button id="emergency-button" class="button">Alert</button>
+                <div id="alert-message"></div>
+            </div>
         </div>
     </section>
-
     <!-- About section -->
 
     <section class="about-section" id="about">
@@ -291,8 +294,8 @@
                 });
             });
         });
-
     </script>
+    <script src="{% static 'crimoapp/script.js' %}"></script>
 </body>
 
 </html>
