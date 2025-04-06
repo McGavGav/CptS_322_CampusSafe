@@ -5,3 +5,4 @@ GitPython==3.1.41
 setuptools==69.0.3
 smmap==5.0.1
 sqlparse==0.5.2
+notify_py==0.3.43

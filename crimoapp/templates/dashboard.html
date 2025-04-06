@@ -409,8 +409,9 @@
         <ul class="navbar">
             <li class="logo"><a href="{% url 'home' %}">CrisisMonitor</a></li>
             <li class="hideOnMobile"><a href="{% url 'home' %}">HOME</a></li>
-            <li class="hideOnMobile"><a href="#about">ABOUT US</a></li>
-            <li class="hideOnMobile"><a href="#faq">FAQs</a></li>
+            <li class="hideOnMobile"><a href="{% url 'resources' %}">SAFETY RESOURCES</a></li>
+            <li class="hideOnMobile"><a href="{% url 'report' %}">REPORTS</a></li>
+            <li class="hideOnMobile"><a href="{% url 'dashboard' %}">DASHBOARD</a></li>
             <li class="hideOnMobile"><a href="#footer">CONTACT US</a></li>
             <li class="menu-button" onclick="showSidebar()">
                 <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px"
@@ -429,8 +430,9 @@
                             d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                     </svg></a></li>
             <li><a href="{% url 'home' %}">HOME</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#faq">FAQs</a></li>
+            <li><a href="{% url 'resources' %}">RESOURCES</a></li>
+            <li><a href="{% url 'report' %}">REPORTS</a></li>
+            <li><a href="{% url 'dashboard'}">DASHBOARD</a></li>
             <li><a href="#footer">CONTACT US</a></li>
         </ul>
     </nav>
@@ -454,17 +456,17 @@
                 <table class="data-table" id="disasterTable">
                     <thead>
                         <tr>
-                            <th>Disaster Type</th>
+                            <th>Description</th>
                             <th>Location</th>
-                            <th>Data</th>
+                            <th>Time</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for disaster in disasters %}
+                        {% for report in disasters %}
                         <tr class="table-row">
-                            <td>{{ disaster.disaster_type }}</td>
-                            <td>{{ disaster.location }}</td>
-                            <td>{{ disaster.data }}</td>
+                            <td>{{ report.description }}</td>
+                            <td>{{ report.location }}</td>
+                            <td>{{ report.time }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -492,8 +494,8 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="{% url 'home' %}">HOME</a></li>
-                    <li><a href="#about">ABOUT US</a></li>
-                    <li><a href="#faq">FAQs</a></li>
+                    <li><a href="{% url 'report' %}">REPORTS</a></li>
+                    <li><a href="{% url 'dashboard' %}">DASHBOARD</a></li>
                     <li><a href="#footer">CONTACT US</a></li>
                 </ul>
             </div>
