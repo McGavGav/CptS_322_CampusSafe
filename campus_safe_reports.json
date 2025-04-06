@@ -19,5 +19,12 @@
     "location": "Todd Hall",
     "description": "Fire",
     "time": "7:00 PM"
+  },
+  {
+    "name": "Gavin testing",
+    "id": "test",
+    "location": "yo moms house -test",
+    "description": "test",
+    "time": "test"
   }
 ]

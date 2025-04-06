@@ -1,8 +1,8 @@
-from notifypy import Notify
+from plyer import notification
 
 def send_notification(info, location):
-    notification = Notify()
-    notification.title = "\n"
-    notification._notification_application_name = info
-    notification.message = location
-    notification.send()
+    notification.notify(
+        title="Campus Safe Alert",
+        message=f"{info}\n{location}",
+        timeout=10  # Notification timeout in seconds
+    )
