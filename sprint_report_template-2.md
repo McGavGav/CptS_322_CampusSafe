@@ -1,10 +1,10 @@
 # Sprint 2 Report 
 Video Link: 
 ## What's New (User Facing)
- * We finished the remaining features that were on our “In Progress” on our kanban board. These features included incident notification, severe 
-   weather alert, and incident maps. While finishing all of the basic coding for all of our features we had to also find a platform where we 
-   could implement these features into an app where users would be able to interact with. So we were able to pick a template where we would put 
-   all of our features and implement them into this template to create a visual representation of a campus safe app. 
+We finished the remaining features that were on our “In Progress” on our kanban board. These features included incident notification, severe 
+weather alert, and incident maps. While finishing all of the basic coding for all of our features we had to also find a platform where we 
+could implement these features into an app where users would be able to interact with. So we were able to pick a template where we would put 
+all of our features and implement them into this template to create a visual representation of a campus safe app. 
 
 
 
