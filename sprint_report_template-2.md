@@ -1,5 +1,5 @@
 # Sprint 2 Report 
-Video Link: https://youtu.be/wFkvse24hZM
+Video Link: 
 ## What's New (User Facing)
  * We have a working website functionality for campus safe
  * We have login, report, resources implemented within the app
@@ -16,23 +16,25 @@ and some more emergency functionality
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
 
- * https://github.com/McGavGav/CptS_322_CampusSafe/issues/1
- * https://github.com/McGavGav/CptS_322_CampusSafe/issues/3
- * https://github.com/McGavGav/CptS_322_CampusSafe/issues/4
- * https://github.com/McGavGav/CptS_322_CampusSafe/issues/5
- * https://github.com/McGavGav/CptS_322_CampusSafe/issues/6
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/18
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/15
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/14
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/13
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/12
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/8
  
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
- * N/A
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/17
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/19
+ * https://github.com/McGavGav/CptS_322_CampusSafe/issues/11
 
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
- * [Register.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/gavin/Register.py)
- * [report.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/gilad/report.py)
- * [safety_resources.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/julian/safety_resources.py)
- * [andreas_branch_with_Django_and_Emergency_Button](https://github.com/McGavGav/CptS_322_CampusSafe/tree/andrea)
- * [ReportHistory.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/Marissa/ReportHistory.py)
+ * Please not the entire django framework is new but files to focus on for our work are:
+ * [Views.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/main/crimoapp/views.py)
+ * [urls.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/main/crimoapp/urls.py)
+ * [templates](https://github.com/McGavGav/CptS_322_CampusSafe/tree/main/crimoapp/templates)
  
 ## Retrospective Summary
 Here's what went well:
