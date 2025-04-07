@@ -1,5 +1,5 @@
 # Sprint 2 Report 
-Video Link: 
+Video Link: https://youtu.be/imiaE3GpHpU 
 ## What's New (User Facing)
 We finished the remaining features that were on our “In Progress” on our kanban board. These features included incident notification, severe 
 weather alert, and incident maps. While finishing all of the basic coding for all of our features we had to also find a platform where we 
