@@ -32,7 +32,7 @@ Here are links to the issues that we completed in this sprint:
 
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
- * Please not the entire django framework is new but files to focus on for our work are:
+ * Please note the entire django framework is new but files to focus on for our work are:
  * [Views.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/main/crimoapp/views.py)
  * [urls.py](https://github.com/McGavGav/CptS_322_CampusSafe/blob/main/crimoapp/urls.py)
  * [templates](https://github.com/McGavGav/CptS_322_CampusSafe/tree/main/crimoapp/templates)
