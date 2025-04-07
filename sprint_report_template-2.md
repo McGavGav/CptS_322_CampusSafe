@@ -1,17 +1,18 @@
 # Sprint 2 Report 
 Video Link: 
 ## What's New (User Facing)
- * We have a working website functionality for campus safe
- * We have login, report, resources implemented within the app
+ * We finished the remaining features that were on our “In Progress” on our kanban board. These features included incident notification, severe 
+   weather alert, and incident maps. While finishing all of the basic coding for all of our features we had to also find a platform where we 
+   could implement these features into an app where users would be able to interact with. So we were able to pick a template where we would put 
+   all of our features and implement them into this template to create a visual representation of a campus safe app. 
+
 
 
 ## Work Summary (Developer Facing)
-We achieved a working site in order for our project to operate this time within
-the Django framework we set out to understand and get working on within the first sprint and this sprint.
+We broke up the different parts with each team member. Gilad and Marissa worked on the remaining features of the app that still needed to be coded and created. Gavin, Julian, and Andrea worked on implementing the features that we finished in sprint 1 to a working template so that the different features have an illustration and are user friendly. We realized that we needed to be able to implement all of these features into a template so it can be put all together and not just lines of code that work individually. This mistake was realized and now we have been slowly trying to implement our features together where it would actually have different dropdown features such as report history, map illustration, and how to make a report. Also Julian worked on a full implementation of our app on a template where we had different tabs for different features
 
 ## Unfinished Work
-We want to implement a map feature to see where issues take place along with features specific to being logged in
-and some more emergency functionality
+We still have to do the integration of incident notification, severe weather alert, incident maps, and reporting an incident needs to be organized better in our dashboard. Currently we are still in the process of implementing the home page and user log in to the template that we have for our campus safe app. We are in the code review process for safety resources and are testing the emergency button to make sure that it performs exactly how it should be when integrated with our home page. So far we are still trying to implement multiple features that only have the basic coding into our template and have all of the functions be able to work together. 
 
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
