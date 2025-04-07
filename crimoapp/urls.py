@@ -9,4 +9,5 @@ urlpatterns = [
     path('registerUser/', views.register_user, name='register_user'),  # Fixed import
     path('registration_success/', views.registration_success, name='registration_success'),
     path('login/', views.login_user, name='login_user'),  # Add login view
+    path('incident-map/', incidentMap, name='incidentMap'),
 ]
