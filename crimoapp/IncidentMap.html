@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incident Map</title>
 
-    <!-- Load Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
     <style>
@@ -16,24 +15,19 @@
     </style>
 </head>
 <body>
-    <h1>Campus Incident Map</h1>
     <div id="map"></div>
 
     <script>
         function initMap() {
-            // Set campus center location
             var campusCenter = { lat: 37.7749, lng: -122.4194 }; // Change to your campus location
-            
-            // Initialize the map
+
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
                 center: campusCenter
             });
 
-            // Load incidents from Django
             var incidents = JSON.parse('{{ incidents_json|escapejs }}');
 
-            // Add markers for each incident
             incidents.forEach(function(incident) {
                 var marker = new google.maps.Marker({
                     position: { lat: incident.lat, lng: incident.lng },
