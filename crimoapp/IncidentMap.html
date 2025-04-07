@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incident Map</title>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src=" google map link" async defer></script>
 
     <style>
         #map {
@@ -19,7 +19,7 @@
 
     <script>
         function initMap() {
-            var campusCenter = { lat: 37.7749, lng: -122.4194 }; // Change to your campus location
+            var campusCenter = { lat: 46.7295, lng: 117.1803 }; // wsu location
 
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
@@ -35,7 +35,6 @@
                     title: incident.name
                 });
 
-                // Info window for details
                 var infoWindow = new google.maps.InfoWindow({
                     content: `<strong>${incident.name}</strong><br>${incident.description}`
                 });
