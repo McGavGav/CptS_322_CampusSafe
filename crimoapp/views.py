@@ -9,6 +9,12 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
 
+def incidentMap (request):
+  incident = Incident.objest.all()
+  incident_json = json.dumps ([{'name : i.name, 'description' : i.description, 'latitude' : i.latitude, 'longitude' : i.longitude}
+                                for i in incident])
+  return render (request, 'incidentMap.html', {'incident_json':incident_json})
+
 
 def report(request):
     if request.method == "POST":
