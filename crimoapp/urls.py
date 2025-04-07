@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import IncidentMap
+from .views import incidentMap
 
 urlpatterns = [
-    path('incident-map/', IncidentMap, name='IncidentMap'),
+    path('incident-map/', incidentMap, name='incidentMap'),
 ]
