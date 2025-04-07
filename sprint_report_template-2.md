@@ -38,9 +38,11 @@ Please review the following code files, which were actively developed during thi
  
 ## Retrospective Summary
 Here's what went well:
- * a working website runs on the test environment within django.
- * we were much more organized than in sprint 1 and had better teamwork
- * we planned our sprint better and achieved our gials for this sprint
+ * We have a working app now
+ * Features from last sprint have been fully implemented into the app
+ * We know what we need to do for the next sprint
+
+ 
    
 Here's what we'd like to improve:
    * Account functionality
@@ -48,10 +50,13 @@ Here's what we'd like to improve:
    * report process flow (pending)
 
 Here's what did not go well
-  * We could still improve some communication but it is much improved
-  * Could work on some time handling
+  * The notification part of the app is hard to get to work on computers
+  * We had issues getting a app interface at the beginning
+  * Issues assigning work for this sprint
+
   
 Here are changes we plan to implement in the next sprint:
-   * Work on correct account functionality
-   * Some UI changes for certain sections
-   * Overall app cohesiveness for user experience
+   * Polishing up the app and making it look consistent and good
+   * Working on some more features for the app
+   * Making sure everything works together
+
