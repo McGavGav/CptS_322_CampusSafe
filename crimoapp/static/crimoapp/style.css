@@ -426,8 +426,8 @@ nav li:first-child {
 
 /* button */
 .button{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     background-color: #ff0000;
     color: white;
     border: none;
@@ -449,7 +449,7 @@ nav li:first-child {
 .alert_button_container
 {
     display: flex;
-    justify-content: center;   /* <-- this centers horizontally */
+    justify-content: center;   
     align-items: center;       /* <-- this centers vertically */
     padding: 0 20px;
     margin-top: 80px;

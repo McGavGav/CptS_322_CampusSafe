@@ -24,6 +24,7 @@ def homepage(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('crimoapp/', include('crimoapp.urls')),  # Include app-specific URLs
+    path('app/', include('crimoapp.urls')),
     path('', homepage),  # Root URL
 ]
 

@@ -3,8 +3,6 @@ from django.http import JsonResponse
 import json
 from .models import EmergencyAlert  
 
-
-
 # views.py
 from django.shortcuts import render
 from .models import Disaster
@@ -29,8 +27,12 @@ def alertsend(request):
             lat = data.get("lat")
             lon = data.get("lon")
 
+            if lat is None or lon is None:
+                return JsonResponse({"error":"Can't acces codinates"}, status = 400)
+
             EmergencyAlert.objects.create(latitude=lat, longitude=lon)
-            return JsonResponse({"status": "received", "lat": lat, "lon": lon})
+            return JsonResponse({"status": "received", "lat": lat, "lon": lon}, status = 200)
+        
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
 
