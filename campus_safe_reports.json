@@ -26,5 +26,12 @@
     "location": "yo moms house -test",
     "description": "test",
     "time": "test"
+  },
+  {
+    "name": "Tester1",
+    "id": "testID",
+    "location": "CUB",
+    "description": "an army of ants stole the starbucks coffee machine",
+    "time": "2:30pm"
   }
 ]

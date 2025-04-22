@@ -4,10 +4,12 @@ from .models import Disaster
 import json
 import os
 from .utils import send_notification
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-
+from django.contrib.auth.models import User  # Ensure this is imported
+from .forms import UserRegistrationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout as auth_logout
 
 
 def report(request):
@@ -63,17 +65,17 @@ def dashboard(request):
 
 def register_user(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            form.save()  # Save the user to the database
             messages.success(request, "User registered successfully!")
-            return redirect('registration_success')  # Redirect to the success page
+            return redirect('registration_success')  # Redirect to success page
         else:
             messages.error(request, "There was an error with your registration.")
     else:
-        form = UserCreationForm()
+        form = UserRegistrationForm()
     
-    return render(request, 'registerUser.html', {'form': form})
+    return render(request, 'registration.html', {'form': form})
 
 def registration_success(request):
     return render(request, 'registrationSuccess.html')
@@ -89,5 +91,26 @@ def login_user(request):
             return redirect('home')  # Redirect to the home page immediately
         else:
             messages.error(request, "Invalid username or password.")
-    return redirect('register_user')  # Redirect back to the registration page
+            return render(request, 'login.html')  # Re-render the login page with an error message
+    return render(request, 'login.html')  # Render the login page for GET requests
 
+@login_required
+def view_report_history(request):
+    file_path = "campus_safe_reports.json"
+
+    if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
+        with open(file_path, "r") as file:
+            reports = json.load(file)
+    else:
+        reports = []
+
+    # Filter reports by the logged-in user's ID
+    user_reports = [report for report in reports if report["id"] == str(request.user.id)]
+
+    return render(request, 'report_history.html', {'reports': user_reports})
+
+
+def logout_user(request):
+    auth_logout(request)
+    messages.success(request, "You have been logged out.")
+    return redirect('home')
