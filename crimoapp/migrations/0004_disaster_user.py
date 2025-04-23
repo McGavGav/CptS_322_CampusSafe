@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('crimoapp', '0002_alter_disaster_disaster_type'),
+        ('crimoapp', '0003_emergencyalert'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
