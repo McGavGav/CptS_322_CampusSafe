@@ -22,6 +22,7 @@ class Disaster(models.Model):
     disaster_type = models.CharField(max_length=50, choices=DISASTER_TYPES)
     location = models.CharField(max_length=100)
     data = models.TextField()
+    
 
     def __str__(self):
         return f"{self.disaster_type} in {self.location}"

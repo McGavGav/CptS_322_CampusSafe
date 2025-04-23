@@ -70,6 +70,50 @@
             cursor: pointer;
         }
         
+        /* Dropdown Styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            color: var(--dark-color) !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
         /* Sidebar */
         .sidebar {
             position: fixed;
@@ -226,9 +270,22 @@
         <ul class="nav-links">
             <li><a href="{% url 'home' %}">HOME</a></li>
             <li><a href="{% url 'resources' %}">SAFETY RESOURCES</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#faq">FAQs</a></li>
+            <li><a href="{% url 'report' %}">REPORTS</a></li>
+            <li><a href="{% url 'dashboard' %}">DASHBOARD</a></li>
             <li><a href="#footer">CONTACT US</a></li>
+            
+            <!-- Dynamic Login/Account Dropdown -->
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+                <a href="#" class="dropbtn">ACCOUNT</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'view_report_history' %}">View Report History</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            </li>
+            {% else %}
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            {% endif %}
         </ul>
         
         <div class="menu-button" onclick="showSidebar()">
@@ -244,9 +301,17 @@
         <ul>
             <li><a href="{% url 'home' %}">HOME</a></li>
             <li><a href="{% url 'resources' %}">SAFETY RESOURCES</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#faq">FAQs</a></li>
+            <li><a href="{% url 'report' %}">REPORTS</a></li>
+            <li><a href="{% url 'dashboard' %}">DASHBOARD</a></li>
             <li><a href="#footer">CONTACT US</a></li>
+            
+            <!-- Dynamic Login/Account Option -->
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'view_report_history' %}">MY REPORT HISTORY</a></li>
+            <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            {% endif %}
         </ul>
     </div>
     
