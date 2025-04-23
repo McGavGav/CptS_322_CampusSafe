@@ -77,6 +77,77 @@
                 max-width: 90%;
             }
         }
+
+        /* Dropdown Styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            height: 35px;
+        }
+
+        .dropbtn {
+            color: #fff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: normal;
+            background: none;
+            border: none;
+            height: 35px;
+        }
+
+        .dropbtn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .dropbtn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .dropbtn:hover::after {
+            width: 100%;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            right: 0;
+            top: 35px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
@@ -86,13 +157,26 @@
 
     <nav>
         <ul class="navbar">
-            <li class="logo"><a href="{% url 'dashboard' %}">Campus Safe</a></li>
+            <li class="logo"><a href="{% url 'home' %}">Campus Safe</a></li>
             <li class="hideOnMobile"><a href="{% url 'home' %}">HOME</a></li>
             <li class="hideOnMobile"><a href="{% url 'resources' %}">SAFETY RESOURCES</a></li>
             <li><a href="{% url 'report' %}">REPORTS</a></li>
             <li><a href="{% url 'dashboard' %}">DASHBOARD</a></li>
             <li class="hideOnMobile"><a href="#footer">CONTACT US</a></li>
-            <li><a href="{% url 'register_user' %}">LOGIN/REGISTER</a></li> 
+
+            <!-- Dynamic Login/Account Dropdown -->
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+                <a href="#" class="dropbtn">ACCOUNT</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'view_report_history' %}">View Report History</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            </li>
+            {% else %}
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            {% endif %}
+
             <li class="menu-button" onclick="showSidebar()">
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px"
@@ -102,21 +186,21 @@
                 </a>
             </li>
         </ul>
-
-        <!-- Sidebar -->
-        <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px"
-                        viewBox="0 -960 960 960" width="26px" fill="#fff">
-                        <path
-                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-                    </svg></a></li>
-            <li><a href="{% url 'home' %}">HOME</a></li>
-            <li><a href="{% url 'resources' %}">SAFETY RESOURCES</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#faq">FAQs</a></li>
-            <li><a href="#footer">CONTACT US</a></li>
-        </ul>
     </nav>
+
+    <!-- Sidebar -->
+    <ul class="sidebar">
+        <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px"
+                    viewBox="0 -960 960 960" width="26px" fill="#fff">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg></a></li>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="{% url 'resources' %}">SAFETY RESOURCES</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#footer">CONTACT US</a></li>
+    </ul>
 
     <!-- Hero Section -->
 

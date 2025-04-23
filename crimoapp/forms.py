@@ -1,15 +1,29 @@
 from django import forms
-from .models import User
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
-class UserRegistrationForm(forms.ModelForm):
+class UserRegistrationForm(UserCreationForm):
+    username = forms.CharField(
+        max_length=8,
+        required=True,
+        help_text="Enter an 8-digit numeric username.",
+        widget=forms.TextInput(attrs={'placeholder': '8-digit username'}),
+    )
+
+    password1 = forms.CharField(
+        label="Password",
+        widget=forms.PasswordInput(attrs={'placeholder': 'Password'}),
+        help_text="Enter a strong password.",
+    )
+
     class Meta:
         model = User
-        fields = ['user_id', 'last_name', 'first_name']
+        fields = ['username', 'password1']
 
-    def clean_user_id(self):
-        user_id = self.cleaned_data.get('user_id')
-        if not user_id.isdigit() or len(user_id) != 8:
-            raise forms.ValidationError("User ID must be an 8-digit number.")
-        if User.objects.filter(user_id=user_id).exists():
-            raise forms.ValidationError("User ID is already taken.")
-        return user_id
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if not username.isdigit() or len(username) != 8:
+            raise forms.ValidationError("Username must be an 8-digit number.")
+        if User.objects.filter(username=username).exists():
+            raise forms.ValidationError("Username is already taken.")
+        return username
