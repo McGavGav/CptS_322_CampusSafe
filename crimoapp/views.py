@@ -12,11 +12,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as auth_logout
 
 
+@login_required
 def report(request):
     if request.method == "POST":
+        if not request.user.is_authenticated:
+            messages.error(request, "You must be logged in to submit a report.")
+            return redirect('crimoapp:login')
+
         report = {
             "name": request.POST["name"],
-            "id": request.POST["id"],
+            "id": str(request.user.id),  # Use the logged-in user's ID
             "location": request.POST["location"],
             "description": request.POST["description"],
             "time": request.POST["time"]
