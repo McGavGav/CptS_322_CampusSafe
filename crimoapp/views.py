@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from .models import Disaster
 import json
 import os
-from .utils import send_notification
+#from .utils import send_notification
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.models import User  # Ensure this is imported
@@ -139,3 +139,22 @@ def logout_user(request):
     auth_logout(request)
     messages.success(request, "You have been logged out.")
     return redirect('home')
+
+@csrf_exempt
+def alertsend(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            lat = data.get("lat")
+            lon = data.get("lon")
+
+            if lat is None or lon is None:
+                return JsonResponse({"error":"Can't acces codinates"}, status = 400)
+
+            EmergencyAlert.objects.create(latitude=lat, longitude=lon)
+            return JsonResponse({"status": "received", "lat": lat, "lon": lon}, status = 200)
+        
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
+    return JsonResponse({"error": "Invalid request"}, status=400)
