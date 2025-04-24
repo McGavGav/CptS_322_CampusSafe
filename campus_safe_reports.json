@@ -19,5 +19,12 @@
     "location": "Todd Hall",
     "description": "Fire",
     "time": "7:00 PM"
+  },
+  {
+    "name": "Gilad",
+    "id": "1",
+    "location": "Chipotle",
+    "description": "Fire",
+    "time": "2:32 PM"
   }
 ]

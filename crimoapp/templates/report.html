@@ -320,5 +320,15 @@
       }
     });
   </script>
+<script>
+  const reportForm = document.querySelector('form');
+
+  reportForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Incident report filed check the Dashboard for more Information');
+    reportForm.submit();
+  });
+</script>
+
 </body>
 </html>

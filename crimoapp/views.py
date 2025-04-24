@@ -10,7 +10,6 @@ from django.shortcuts import render, redirect
 from .models import Disaster
 import json
 import os
-from .utils import send_notification
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.models import User  # Ensure this is imported
@@ -52,10 +51,7 @@ def report(request):
         with open(file_path, "w") as file:
             json.dump(reports, file, indent=2)
     
-        send_notification(
-            info=report['description'],
-            location=f"At: {report['location']}"
-        )
+        
 
     return render(request, "report.html")
 
