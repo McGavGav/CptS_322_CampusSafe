@@ -20,7 +20,7 @@ from django.contrib.auth import logout as auth_logout
 
 
 def incidentMap (request):
-  incident = Disaster.object.all()
+  disasters = Disaster.objects.all()
   incident_json = json.dumps ([{'name' : i.name,
                                 'description' : i.description,
                                 'latitude' : i.latitude, 
