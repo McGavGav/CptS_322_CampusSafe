@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect
 from .models import Disaster
 import json
 import os
-#from .utils import send_notification
+from .utils import send_notification
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.models import User  # Ensure this is imported
