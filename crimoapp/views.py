@@ -19,8 +19,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as auth_logout
 
 
-def incidentMap(request):
-    return render(request, 'incidentMap.html')
+def incidentMap (request):
+  incident = Disaster.objest.all()
+  incident_json = json.dumps ([{'name' : i.name,
+                                'description' : i.description,
+                                'latitude' : i.latitude, 
+                                'longitude' : i.longitude}
+                                for i in incident])
+  return render (request, 'incidentMap.html', {'incident_json':incident_json})
 
 
 @login_required
