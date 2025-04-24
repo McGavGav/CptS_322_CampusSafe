@@ -25,7 +25,7 @@ def incidentMap (request):
                                 'description' : i.description,
                                 'latitude' : i.latitude, 
                                 'longitude' : i.longitude}
-                                for i in incident])
+                                for i in disasters])
   return render (request, 'incidentMap.html', {'incident_json':incident_json})
 
 
