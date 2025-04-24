@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
-from .import views
+from crimoapp import views
 
 def homepage(request):
     return render(request, 'crimohtml.html')  # Render an HTML template
