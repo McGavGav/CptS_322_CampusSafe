@@ -21,12 +21,7 @@ from django.contrib.auth import logout as auth_logout
 
 def incidentMap (request):
   disasters = Disaster.objects.all()
-  incident_json = json.dumps ([{'name' : i.name,
-                                'description' : i.description,
-                                'latitude' : i.latitude, 
-                                'longitude' : i.longitude}
-                                for i in disasters])
-  return render (request, 'incidentMap.html', {'incident_json':incident_json})
+  return render (request, 'incidentMap.html', {'disasters':disasters})
 
 
 @login_required
