@@ -20,15 +20,6 @@ from django.contrib.auth import logout as auth_logout
 
 
 def incidentMap(request):
-    # Using Disaster model instead of Incident since Incident isn't defined
-    incidents = Disaster.objects.all()
-    incident_json = json.dumps([{'name': i.disaster_type, 
-                              'description': i.description, 
-                              # Assuming latitude and longitude are available, otherwise adjust accordingly
-                              'latitude': getattr(i, 'latitude', 0),
-                              'longitude': getattr(i, 'longitude', 0)
-                             }
-                              for i in incidents])
     return render(request, 'incidentMap.html', {'incident_json': incident_json})
 
 
