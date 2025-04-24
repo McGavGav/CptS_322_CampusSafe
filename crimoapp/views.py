@@ -20,7 +20,7 @@ from django.contrib.auth import logout as auth_logout
 
 
 def incidentMap(request):
-    return render(request, 'incidentMap.html', {'incident_json': incident_json})
+    return render(request, 'incidentMap.html')
 
 
 @login_required
